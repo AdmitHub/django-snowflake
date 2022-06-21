@@ -113,7 +113,8 @@ class DatabaseWrapper(BaseDatabaseWrapper):
             conn_params['schema'] = settings_dict['SCHEMA']
         if settings_dict['ROLE']:
             conn_params['session_parameters']['role'] = settings_dict['ROLE']
-
+        if settings_dict.get("QUERY_TAG"):
+            conn_params["session_parameters"]["query_tag"] = settings_dict["QUERY_TAG"]
         return conn_params
 
     def get_new_connection(self, conn_params):
