@@ -103,6 +103,10 @@ class DatabaseWrapper(BaseDatabaseWrapper):
             conn_params['user'] = settings_dict['USER']
         if settings_dict['PASSWORD']:
             conn_params['password'] = settings_dict['PASSWORD']
+        if settings_dict['PRIVATE_KEY_FILE']:
+            conn_params['private_key_file'] = settings_dict['PRIVATE_KEY_FILE']
+        if settings_dict['PRIVATE_KEY_FILE_PWD']:
+            conn_params['private_key_file_pwd'] = settings_dict['PRIVATE_KEY_FILE_PWD']
         if settings_dict['ACCOUNT']:
             conn_params['account'] = settings_dict['ACCOUNT']
         if settings_dict['WAREHOUSE']:
